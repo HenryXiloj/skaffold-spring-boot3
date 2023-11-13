@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: skaffold-demo
+  tag: latest
+
+service:
+  port: 8080
+
+ingress:
+  enabled: true

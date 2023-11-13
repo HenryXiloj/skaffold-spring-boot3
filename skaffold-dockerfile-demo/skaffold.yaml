@@ -1,0 +1,16 @@
+apiVersion: skaffold/v2beta10
+kind: Config
+build:
+  artifacts:
+    - image: skaffold-demo-docker
+      context: .
+      docker:
+        dockerfile: Dockerfile
+
+deploy:
+  helm:
+    releases:
+      - name: myapp
+        chartPath: ./myapp-chart
+        valuesFiles:
+          - ./myapp-chart/values.yaml
